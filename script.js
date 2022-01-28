@@ -1,12 +1,14 @@
+// take a veriable customerlist 
 const customerList = (JSON.parse(localStorage.getItem('formData')));
 // console.log(customerList);
 /* show the customer data in the screen*/
 const bodyContainer = document.querySelector('#body-container')
-
+/*we create a row and give it rhe class "row"and append it into the body container */
 const row = document.createElement('div')
 row.classList.add('row')
 bodyContainer.appendChild(row)
-
+/*we create a for each loop to itrate over the customberlist
+to get the each customer  */
 customerList.forEach(customer => {
     
     const col = document.createElement("div")

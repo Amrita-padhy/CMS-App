@@ -30,33 +30,35 @@
           <form class="w-50 mx-auto" id="main_form">
             <div class="row w-100">
                 <div class="col">
-                  <label for="exampleFormControlInput1" class="form-label">Receive date</label>
-                  <input type="text" name="receiveDate" class="form-control" placeholder="Receive date" >
+                  <label for="receiveDate" class="form-label">Receive date</label>
+                  <input type="text" name="receiveDate" id="receiveDate" class="form-control" placeholder="Receive date" >
                 </div>
                 <div class="col">
-                  <label for="exampleFormControlInput1" class="form-label">Deliver date</label>
-                  <input type="text" name="deliverDate" class="form-control" placeholder="Deliver date" >
+                  <label for="deliverDate" class="form-label">Deliver date</label>
+                  <input type="text" name="deliverDate" id="deliverDate" class="form-control" placeholder="Deliver date" >
                 </div>
                 <div class="col">
-                  <label for="exampleFormControlInput1" class="form-label">Sl Number</label>
-                    <input type="text"name="slNumber" class="form-control" placeholder="Sl Number">
+                  <label for="slNumber" class="form-label">Sl Number</label>
+                    <input type="text"name="slNumber" id="slNumber" class="form-control" placeholder="Sl Number">
                     
                   </div>
               </div>
             <div class="mb-3 ">
-                <label for="exampleFormControlInput1" class="form-label">Name</label>
-                <input type="text"name="name" class="form-control" id="exampleFormControlInput1" placeholder="name">
-                <div class="name-error"></div>
+                <label for="nameField" class="form-label">Name</label>
+                <input type="text"name="name" class="form-control" id="nameField" placeholder="name">
+                <div class="name-error error"></div>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                <textarea name="address" class="form-control" id="exampleFormControlTextarea1" placeholder="Address" rows="3"></textarea>
+                <label for="adressField" class="form-label">Address</label>
+                <textarea name="address" class="form-control" id="adressField" placeholder="Address" rows="3"></textarea>
+                <div class="address-error error"></div>
               </div>
-              <div class="mb-3 w-25">
-                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                <input type="text" name="phoneNumber" class="form-control" id="exampleFormControlInput2" placeholder="Number">
+              <div class="mb-3 w-100">
+                <label for="phoneNumberField" class="form-label">Phone Number</label>
+                <input type="text" name="phoneNumber"  class="form-control" id="phoneNumberField" placeholder="Number">
+                <div class="phoneNumber-error error"></div>
               </div>
-              <label for="exampleFormControlTextarea1" class="form-label">Items</label>
+              <label for="items" id="items" class="form-label">Items</label>
               <select class="form-select" name="items">
                 <option selected>nothing</option>
                 <option value="Blause">Blause</option>
@@ -67,8 +69,8 @@
               </select>
 
               <div class="mb-3 ">
-                <label for="exampleFormControlInput1" class="form-label"> Total Amount</label>
-                <input type="text" name="totalAmount" class="form-control" id="exampleFormControlInput1" placeholder="Amount">
+                <label for="totalAmount" class="form-label"> Total Amount</label>
+                <input type="text" name="totalAmount" class="form-control" id="totalAmount" placeholder="Amount">
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg">Submit</button>
