@@ -15,7 +15,7 @@ form.addEventListener("submit", e => {
     /* if there is no name,address,phn number then show alert*/
     if (!value.name || !value.address || !value.number) {
         if (!value.name) {
-
+ 
             alert('please put your name')
             return
         }
@@ -23,8 +23,8 @@ form.addEventListener("submit", e => {
             alert('please put your address')
             return
         }
-        if (!value.number) {
-            alert('please put your PhoneNumber')
+        if (!value.phoneNumber) {
+            alert('please put your phoneNumber')
             return
         }
     }
