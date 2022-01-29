@@ -34,6 +34,18 @@ customerList.forEach(customer => {
     row.appendChild(col)
 
 });
+// const Container = document.querySelector("#body-container")
+// console.log(Container);
+const cards = document.querySelectorAll(".card")
+const cardArray =  Array.from(cards);
+console.log(cardArray);
+
+cardArray.forEach(card => {
+    card.addEventListener("click",e => {
+        window.location.href = "/customerDetail.html"
+    })
+});
+
 
 
 
