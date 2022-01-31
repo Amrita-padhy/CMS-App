@@ -27,15 +27,15 @@
             </button>
           </div>
           <!-- BODY SECTION -->
-          <form class="w-50 mx-auto" id="main_form">
+          <form class="w-50 mx-auto" id="main_form" autocomplete="off">
             <div class="row w-100">
                 <div class="col">
-                  <label for="receiveDate" class="form-label">Receive date</label>
+                  <label for="date" class="form-label">Receive date</label>
                   <input type="text" name="receiveDate" id="receiveDate" class="form-control" placeholder="Receive date" >
                 </div>
                 <div class="col">
                   <label for="deliverDate" class="form-label">Deliver date</label>
-                  <input type="text" name="deliverDate" id="deliverDate" class="form-control" placeholder="Deliver date" >
+                  <input type="date" name="deliverDate" id="deliverDate" class="form-control" placeholder="Deliver date" >
                 </div>
                 <div class="col">
                   <!--  -->
@@ -56,7 +56,7 @@
               </div>
               <div class="mb-3 w-100">
                 <label for="phoneNumberField" class="form-label">Phone Number</label>
-                <input type="text" name="phoneNumber"  class="form-control" id="phoneNumberField" placeholder="Number">
+                <input type="number" name="phoneNumber"  class="form-control" id="phoneNumberField" placeholder="Number">
                 <div class="phoneNumber-error error"></div>
               </div>
               <label for="items" id="items" class="form-label">Items</label>
@@ -71,7 +71,7 @@
 
               <div class="mb-3 ">
                 <label for="totalAmount" class="form-label"> Total Amount</label>
-                <input type="text" name="totalAmount" class="form-control" id="totalAmount" placeholder="Amount">
+                <input type="number" name="totalAmount" class="form-control" id="totalAmount" placeholder="Amount">
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg">Submit</button>

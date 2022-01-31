@@ -1,13 +1,30 @@
 
 // take a veriable form and referance it to html page
 const form = document.querySelector("#main_form")
- /*generate a number
-    get the serial no input ref
-    */
-    const slNumberInput = document.querySelector("#slNumber")
-    // console.log(slNumberInput);
+/*generate a number
+   get the serial no input ref
+   */
+const slNumberInput = document.querySelector("#slNumber")
+// console.log(slNumberInput);
 
-    slNumberInput.value = Math.random()
+slNumberInput.value = Math.random()
+
+/*to fix the receive date to todays date create a veriable and ref that "receiveDateInout"
+and create a function formatDate()
+*/
+const receiveDateInout = document.querySelector("#receiveDate")
+receiveDateInout.value = formatDate();
+
+function formatDate() {
+    const date = new Date().getDate()
+    const month = new Date().getMonth() + 1
+    const year = new Date().getFullYear()
+    return date + "-" + month + "-" + year
+}
+
+
+
+
 //add a event listner to the form element for submitting the form
 form.addEventListener("submit", e => {
     e.preventDefault()
@@ -21,7 +38,7 @@ form.addEventListener("submit", e => {
     /* if there is no name,address,phn number then we select the error div 
     and give it a inner text 
     */
-    if (!customerData.name || !customerData.address || !customerData.number) {
+    if (!customerData.name || !customerData.address || !customerData.phoneNumber) {
         if (!customerData.name) {
             const nameError = document.querySelector(".name-error")
             nameError.innerText = "please fill your name"
@@ -53,11 +70,12 @@ form.addEventListener("submit", e => {
     if (localStorage.getItem("formData")) {
         formData = JSON.parse(localStorage.getItem("formData"));
     }
-   
+
     //if there is no data submitted in the form then add /push new customer data
     formData.push(customerData)
+    // console.log(formData);
     /*after submitting we have to save our data in local storage*/
-    // localStorage.setItem("formData", JSON.stringify(formData))
+    localStorage.setItem("formData", JSON.stringify(formData))
 
 })
 /*we select the name,address and phnno field and add a event listner
@@ -74,9 +92,12 @@ addressField.addEventListener("keypress", (e) => {
 })
 const phoneNumberField = document.querySelector("#phoneNumberField")
 phoneNumberField.addEventListener("keypress", (e) => {
-    const phoneNumberError = document.querySelector(".phoneNumberError-error")
+    const phoneNumberError = document.querySelector(".phoneNumber-error")
     phoneNumberError.innerText = ""
+
 })
+
+//bring the same data of edit page from local storage
 
 
 
