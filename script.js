@@ -1,10 +1,10 @@
 // take a veriable customerlist 
 
 let customerList = (JSON.parse(localStorage.getItem('formData')));
-if (!customerList){
+if (!customerList) {
     customerList = []
-} 
-// console.log(customerList);
+}
+console.log(customerList);
 /* show the customer data in the screen*/
 const bodyContainer = document.querySelector('#body-container')
 /*we create a row and give it rhe class "row"and append it into the body container */
@@ -32,7 +32,7 @@ customerList.forEach(customer => {
 
     const slNunberField = document.createElement("h5")
     slNunberField.classList.add("slNunberField")
-    
+
     slNunberField.innerText = "Sl Number: " + customer.slNumber
 
     card.appendChild(nameField)
@@ -51,17 +51,32 @@ const cards = document.querySelectorAll(".card")
 const cardArray = Array.from(cards);
 // console.log(cardArray);
 
-cardArray.forEach((card,index) => {
+cardArray.forEach((card, index) => {
     card.addEventListener("click", e => {
         const customer = customerList[index];
         console.log(customer);
-        localStorage.setItem("selectedCustomer",JSON.stringify(customer))
+        localStorage.setItem("selectedCustomer", JSON.stringify(customer))
         window.location.href = "/customerDetail.html"
     })
 });
 
+//  click on add button clear customber details from local storage
 
 
+const addBtn = document.querySelector("#addBtn")
+console.log(addBtn);
+addBtn.addEventListener("click", e => {
+    localStorage.removeItem("selectedCustomer")
+})
 
+// we need to referanse the input field
+const formInput = document.querySelector("#form_input")
+console.log(formInput);
 
+//when we start to search something it will show options
+formInput.addEventListener("keypress", e => {
+    console.log(formInput.value);
+    const filteredArray = customerList.filter(customer => customer.name.includes(formInput.value))
+    console.log(filteredArray);
+})
 

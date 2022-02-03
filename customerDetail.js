@@ -4,14 +4,14 @@
 4-get serial numberand saved form data
 5-get the selected customer details  */
 
-console.log(localStorage.getItem('selectedCustomer'));
+// console.log(localStorage.getItem('selectedCustomer'));
 const customerDetail= JSON.parse(localStorage.getItem('selectedCustomer'))
-console.log(customerDetail);
+// console.log(customerDetail);
 
 const cardBody = document.querySelector("#card_body")
-console.log(cardBody);
+// console.log(cardBody);
 const cardItem = document.createElement("div")
-console.log(cardItem);
+// console.log(cardItem);
 cardItem.classList.add("card_item")
 
 const nameField = document.createElement("h4")
@@ -40,11 +40,14 @@ const nameField = document.createElement("h4")
     totalAmountField.innerText = "totalAmount: " + customerDetail.totalAmount
 
     const editButton = document.createElement("button")
+    editButton.classList.add("btn","btn-outline-success","mx-2")
     editButton.innerHTML = "Edit"
-     
+    // when we click on edit button it will redirect to the form.html page
+    //so to give an event listner to edit btn ,on click it will redirect to the form.html page 
     editButton.addEventListener("click",e =>{
         //redirtect to form page
         window.location.href = "/form.html"
+
         
 
     })
@@ -58,6 +61,18 @@ const nameField = document.createElement("h4")
     cardItem.appendChild(itemField)
     cardItem.appendChild(totalAmountField)
     cardItem.appendChild(editButton)
-
     cardBody.appendChild(cardItem);
+
+/* when click on edit
+ we need to access all the data from customber detail*/
+
+
+
+ // put the same fun of home page add btn in customerform add button
+
+ const AddBtn = document.querySelector("#add_button")
+console.log(AddBtn);
+AddBtn.addEventListener("click",e => {
+   localStorage.removeItem("selectedCustomer")
+})
 
